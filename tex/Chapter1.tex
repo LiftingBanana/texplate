@@ -1,0 +1,127 @@
+\chapter{Introduction} \label{chap_Intro}
+A little introduction to show some cool commands. 
+Start with a cool citation \cite{crimgTest}. 
+Now present the groundbreaking pseudo algorithm in Algorithm 
+\ref{algo_pseudo} from said paper. \\
+
+\begin{algorithm}[h]
+	\caption{CCR subroutine}
+	\textbf{Input:} 
+    number of anime watched $N$.
+    
+	\textbf{Returns:} 
+	Level of cringe.
+	
+	\textbf{Do:} 
+	\begin{enumerate}
+		\item
+        Resolve hours of anime $h_{\textrm{tot}} = \sum_{i=1}^{N} h_i a_i$, where $h_i$ is the hour-count 
+        of the $i$-th anime $a_i$. 
+		
+        \item
+		Return cringe level $L  \overset{R}{\gets}  \exp({h_{\textrm{tot}} })$.
+	\end{enumerate}
+	\label{algo_pseudo}
+\end{algorithm} 
+The paper probably contains funky symbols, such as $\pazocal{E}$ and $\cmsy{H}$. 
+Maybe there's even some 
+$\bm{quantum}$ stuff, like $\bra{\psi}$ and $\ket{\varphi}$. Just \emph{why}, you ask? 
+Because everyone thinks it is hip and funky. 
+Of course, we have cool code formatting with monokai syntax highlighting, such as for scripts: \\
+\begin{minted}{perl}
+    #!/bin/bash
+    
+    echo "Hello, world!"
+    >> Hello, world!
+\end{minted}
+And even for external files, such as this python garbage: \\
+\inputminted{python}{codes/test.py}
+Aside from that, this being \LaTeX, there is of course a lot of math going on. 
+\begin{theo}
+	The most cancerous expression I ever had to actually write in a latex file reads
+	\begin{align*}
+		\restr{g(r)}{\Lambda} \defeq
+		\frac{\exp 
+			\Big( -\frac{1}{2} r^2 \Big) }{d} \Biggl( 
+				\sum_{i=0}^{\infty} (-1)^i 
+					\underbrace{
+					\frac{1}{i! (2i+d)} \left( \frac{r^2}{2}\right)^i
+					}_{a_i} 
+			\Biggr)^{-1}.
+	\end{align*}
+\end{theo}
+\begin{proof}
+	Proof by integration. 
+	\begin{align*}
+		\int\limits_{\mathrm{my}}^{\mathrm{life}} 
+			\text{crippling depression} \; dx = \text{dank memes}.
+	\end{align*}
+\end{proof}
+If you want, you can also wrap figures nicely. And do weird stuff around them. 
+% this empty line is needed 
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+		\centering
+		\includegraphics[width=0.38\textwidth]{images/rad_doge.png}
+		\caption{This dog is cooler than you.}
+		\vspace{-1.5cm} % the space after the lable is a little much, erase some.
+		\label{fig_dog}
+\end{wrapfigure} 
+\noindent Like writing stupid things just to create a bit of a text that wraps around 
+a retarded meme of an astonishingly rad looking dog. \\
+Don't forget to include sufficiently many line breaks to allow nice formatting. 
+Otherwise you're gonna be crying yourself to sleep, I promise. 
+I know because I am every night. Anyways, here's another cool list, this time with roman letterings. 
+\begin{enumerate}[label=(\roman*)]
+	\item \textcolor{colordgray}{anime}
+	\item \colorbox{colororange}{autism}
+	\item \textcolor{colorgreen}{cringe}
+\end{enumerate} 
+Yeah, you guessed it. It's a list describing my personality. Dont forgot to escape abbreviations such 
+as i.e.\ if you want to write nice stuff. Quotes are usually done with either \enquote{enquote} 
+or actual ``quotation marks''. Anyways I'm out of words, but the paragraph hopefully 
+wrapped the meme by now. In case not, here's another symbol mumbo jumbo goulash from 
+measure theory with two neatly aligned equations
+\begin{align*}
+	X_{\ast} P (A) 
+	= P(X^{-1}(A)) 
+	&\equiv P_X(A) \equiv P(X \in A)  
+	\; \mathrm{for} \; A \in \cmsy{P}(\mathbb{R}^n), \\
+	P_Z \Big( \prod_{i=1}^{n} A_i \Big) 
+	&= P \Big( 
+		\bigcap\limits_{i=1}^n X_i^{-1}(A_i) 
+		\Big).
+\end{align*}
+And to fill up the page, this is about the only mathematically relevant thing you might 
+need that I can think of -- and haven't mentioned yet -- for now:
+\begin{align*}
+	P^{\sigma}_{kl} = 
+	\begin{cases}
+	\sqrt{2} &\quad \text{if } l = \sigma(k)\\
+	0 &\quad \text{else}  \\
+	\end{cases}
+\end{align*} 
+\section{The epitome of cringe} \label{sec_cringe}
+\subsection{an autobiography} \label{subsec_mylifecringe}
+\epigraphfontsize{\small\itshape}
+\epigraph{``Life is what happens to you while you're busy making other plans."}
+{--- \textup{Some cringy ass Mofo}}
+Now you also know how to quote something. In case you want to shoe everyone 
+how pretentious and annoying you are. And yes, I actually used this, go figure. 
+This (my life) doesn't deserve an extra chapter, but this is how you create one. 
+And you can reference Chapter \ref{chap_Intro}. Or the cool Figure \ref{fig_dog}.
+If you need to give an example of how autistic you are, you may use the following.
+\par\noindent\rule[-15pt]{\textwidth}{0.4pt}
+\begin{ex} \label{ex_endme}
+	Yeah. I won't hand out stories of my life, but we all know how it is. 
+	\begin{align*}
+		\mathop{\Scale[2]{\prod}}_{
+			x \sumel \mathrm{mylife} \times \mathbb{Z}_2
+			} 
+		x^2
+		= \mathrm{cringe}
+	\end{align*}
+	And give it another cool bar to separate it probably from the rest 
+	of your super cool and interesting prose.
+	\par\noindent\rule{\textwidth}{0.4pt}
+\end{ex}

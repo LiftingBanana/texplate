@@ -1,0 +1,14 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Contents}{1}{section*.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Setup}{2}{chapter*.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {1}Introduction}{3}{chapter.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}The epitome of cringe}{5}{section.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{an autobiography}{5}{section*.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{6}{section*.5}%

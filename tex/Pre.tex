@@ -1,0 +1,269 @@
+\documentclass[a4paper, 
+	11pt, 
+	openany % chapters start on any page. For thesis prints use "twosided"
+	]{memoir}
+
+% holds document settings such as title etc
+\input{tex/Settings.tex}
+
+
+%------------------------------------------------- package imports
+\usepackage[a4paper, 
+			inner = 3.0cm, outer = 3.5cm, 
+			top = 2.5cm, bottom = 3.0cm]
+			{geometry}  	  					 % page geometry
+\usepackage[utf8]{inputenc}   					 % special symbols like ä
+\usepackage{dutchcal}          					 % nice Hilbertspace symbols
+\usepackage[dvipsnames]{xcolor}   				 % nice color definitions
+\usepackage{mdframed}							 % to put frames around environments
+\usepackage[english]{babel}    					 % english language package
+\usepackage{amsmath}          					 % mathematical symbols and stuff
+\usepackage{amssymb} 		  					 % symbols e.g. natural numbers
+\usepackage{amsthm}			  					 % math theorem envs
+\usepackage{mathtools}        					 % extension of math environments and commands
+\usepackage{braket}           					 % for braket notation
+\usepackage{graphicx}         					 % include graphics
+\usepackage{float}			  					 % forcing position of graphics (e.g. [H])
+\usepackage{wrapfig}         					 % figures in text float
+\usepackage{enumitem}         					 % nice enumerate environments
+\usepackage{nicefrac}         					 % nice tilted fracs
+\usepackage{lmodern}          					 % cool font
+\usepackage{algpseudocode, algorithm}			 % for pseudocode algorithms
+\usepackage{etoolbox}         					 % reformat sections etc.
+\usepackage{xspace}								 % escape curly braces in simple commands
+\usepackage[unicode = true,	bookmarks = true, 
+			bookmarksnumbered = false, 
+			bookmarksopen = false, 
+			breaklinks = false, 
+			pdfborder={0 0 0}, 
+			backref = false, colorlinks, 
+			linkcolor = red, 
+			citecolor = blue]
+			{hyperref} 		  					 % hyperlinks
+\usepackage{bm}       	 	  					 % bold writing
+\usepackage[backend=biber]{biblatex}			 % style=alphabetic for math like citation
+\usepackage[outputdir=build]{minted}			 % nicely formatted program code
+\usepackage{csquotes}							 % to ensure proper quote formatting in citations
+
+
+%------------------------------------------------- page styleset
+\chapterstyle{chappell}                          % memoir header style
+%\setsecheadstyle{\chaptitlefont}                % section font
+\setbeforesecskip{-6.5ex plus -1ex minus -.2ex}  % section dimensions
+\pagestyle{ruled}
+
+\nouppercaseheads
+\graphicspath{ {images/} }
+
+% make chapter a page style of its own
+\copypagestyle{chapter}{plain} 
+\makeevenfoot{chapter}{}{}{\thepage}
+\makeoddfoot{chapter}{}{}{\thepage}
+\makeevenhead{chapter}{}{}{}
+\makeoddhead{chapter}{}{}{}
+
+% get rid of indent at chapter beginning
+\makeatletter
+\let\@afterindenttrue\@afterindentfalse
+\makeatother
+
+% quote environment formatting
+\epigraphfontsize{\small\itshape} 
+\setlength\epigraphwidth{11cm}
+\setlength\epigraphrule{0pt}
+
+
+%---------------- Colors
+\definecolor{colororange}{HTML}{E65100}		
+\definecolor{topbargray}{HTML}{4A5459}	
+\definecolor{colordgray}{HTML}{795548}			 
+\definecolor{colorhgray}{HTML}{212121}			 
+\definecolor{colorgreen}{HTML}{009688} 			
+\definecolor{colorlgray}{HTML}{FAFAFA}			 
+\definecolor{colorblue}{HTML}{0277BB}	
+\definecolor{monokaibg}{HTML}{272822}		
+\definecolor{solarizedbg}{HTML}{002b36}	
+\definecolor{nativebg}{HTML}{202020}	
+\definecolor{grayy}{HTML}{7e7e7e}
+
+
+%---------------- No indentation environment
+\newenvironment{zeroindent}
+{\par\setlength{\parindent}{0pt}}
+{\par}
+
+
+%------------------------------------------------- environment settings
+\addbibresource{bib/bibliography.bib}
+\AtBeginEnvironment{equation*}{\vspace*{0.1cm}}
+\AtEndEnvironment{equation*}{\vspace*{0.1cm}}
+\newcommand{\crefrangeconjunction}{--} 			 % for referencing multiple figures
+
+%------------------------------------------------- Theorem Styles
+% proof end box format
+\patchcmd{\endproof}
+{\popQED}
+{\par\popQED}
+{}
+{}
+
+\newtheoremstyle{mytheorem}% ⟨name⟩
+{16pt}% ⟨Space above⟩
+{12pt}% ⟨Space below⟩
+{\itshape}% ⟨Body font⟩
+{}% ⟨Indent amount⟩
+{\bfseries}% ⟨Theorem head font⟩
+{.}% ⟨Punctuation after theorem head⟩
+{.5em}% ⟨Space after theorem head⟩
+{}% ⟨Theorem head spec (can be left empty, meaning ‘normal’)⟩
+\theoremstyle{mytheorem}
+\newtheorem{theo}{Theorem}
+
+\newtheoremstyle{kor}% ⟨name⟩
+{16pt}% ⟨Space above⟩
+{12pt}% ⟨Space below⟩
+{\itshape}% ⟨Body font⟩
+{}% ⟨Indent amount⟩
+{\bfseries}% ⟨Theorem head font⟩
+{.}% ⟨Punctuation after theorem head⟩
+{.5em}% ⟨Space after theorem head⟩
+{}% ⟨Theorem head spec (can be left empty, meaning ‘normal’)⟩
+\theoremstyle{kor}
+\newtheorem{kor}{Corollary}
+
+\newtheoremstyle{mydef}% ⟨name⟩
+{16pt}% ⟨Space above⟩
+{16pt}% ⟨Space below⟩
+{\itshape}% ⟨Body font⟩
+{}% ⟨Indent amount⟩
+{\bfseries}% ⟨Theorem head font⟩
+{.}% ⟨Punctuation after theorem head⟩
+{.5em}% ⟨Space after theorem head⟩
+{}% ⟨Theorem head spec (can be left empty, meaning ‘normal’)⟩
+\theoremstyle{mydef}
+\newtheorem{dfn}{Definition}
+
+\newtheoremstyle{myremark}% ⟨name⟩
+{12pt}% ⟨Space above⟩
+{16pt}% ⟨Space below⟩
+{\itshape}% ⟨Body font⟩
+{}% ⟨Indent amount⟩
+{\bfseries}% ⟨Theorem head font⟩
+{}% ⟨Punctuation after theorem head⟩
+{.5em}% ⟨Space after theorem head⟩
+{}% ⟨Theorem head spec (can be left empty, meaning ‘normal’)⟩
+\theoremstyle{myremark}
+\newtheorem{rmk}{Remark}
+\newtheorem*{rmk*}{Remark}
+\newtheorem*{qst*}{Question}
+
+\newtheoremstyle{myex}% ⟨name⟩
+{10pt}% ⟨Space above⟩
+{16pt}% ⟨Space below⟩
+{\itshape}% ⟨Body font⟩
+{}% ⟨Indent amount⟩
+{\bfseries}% ⟨Theorem head font⟩
+{}% ⟨Punctuation after theorem head⟩
+{.5em}% ⟨Space after theorem head⟩
+{}% ⟨Theorem head spec (can be left empty, meaning ‘normal’)⟩
+\theoremstyle{myex}
+\newtheorem{ex}{Example}
+\newtheorem*{ex*}{Example}
+
+
+%------------------------------------------------- Math Commands
+% Math fonts
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}  
+\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
+
+\newcommand{\el}{ {\scriptstyle{\in}}\; }
+\newcommand{\sumel}{ {\scriptscriptstyle{\in}} }
+\newcommand*{\defeq}{
+	\mathrel{
+		\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+			\hbox{\scriptsize.}\hbox{\scriptsize.}
+		}
+	}
+	=
+} % a three line equation sign, what a rhyme.
+
+\DeclareMathOperator{\tr}{Tr} 
+\DeclareMathOperator{\ellip}{\pazocal{E}} 
+
+\newcommand{\probmeas}{\mu}
+\newcommand{\lebmeas}{\lambda}
+
+\DeclareMathAlphabet{\cmsy}{OMS}{cmsy}{m}{n}
+\newcommand{\Lb}{\cmsy{L}}
+
+% function restriction to subset
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+		\left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+		#1 % the function
+		\vphantom{\big|} % pretend it's a little taller at normal size
+		\right|_{#2} % this is the delimiter
+}}
+
+
+%------------------------------------------------- Pseudocode settings
+\algrenewcommand\algorithmicrequire{\textbf{Input:}}
+\algrenewcommand\algorithmicensure{\textbf{Output:}}
+\newcommand*\Let[2]{\State #1 $\gets$ #2}
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}%
+
+
+%------------------------------------------------- Minted styleset
+\mdfdefinestyle{mystyle}{leftmargin = 0pt,
+innerleftmargin = -0.2pt,
+innerrightmargin = 0,
+innertopmargin = -6.2pt,
+innerbottommargin = -6pt,
+linewidth=1pt,
+linecolor=topbargray}
+
+\BeforeBeginEnvironment{minted}{\begin{mdframed}[style=mystyle]}
+\AfterEndEnvironment{minted}{\end{mdframed}}
+
+\setminted{
+	baselinestretch=1.2,
+	fontsize=\footnotesize,
+	% nice styles: monokai, solarized-dark, native. Also adjust bgcolor.
+	style=solarized-dark,
+    bgcolor=solarizedbg
+}
+
+
+%------------------------------------------------- Set some metadata
+\title{\docTitle}
+\author{\docAuthor}
+\date{\today}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

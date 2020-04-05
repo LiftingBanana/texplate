@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{crimgDetector} \PYG{k}{as} \PYG{n+nn}{cd}
+\PYG{c+c1}{\PYGZsh{} cool highlighting stuff}
+
+\PYG{k}{def} \PYG{n+nf}{character}\PYG{p}{(}\PYG{n}{g}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{    Parameters}
+\PYG{l+s+sd}{    \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{l+s+sd}{    g : int}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{crimg} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}hi }\PYG{l+s+si}{\PYGZob{}0\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}boi.\PYGZsq{}}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{crimg}\PYG{o}{*}\PYG{n}{g}
+
+\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}\PYGZdq{}}\PYG{p}{:}
+    \PYG{n}{cd}\PYG{o}{.}\PYG{n}{setInfo}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}\PYGZbs{}vartheta\PYGZdl{}\PYGZdq{}}\PYG{p}{,} \PYG{n}{size}\PYG{o}{=}\PYG{l+m+mi}{20}\PYG{p}{)}
+    \PYG{n}{res} \PYG{o}{=} \PYG{n}{crimg}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}you\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

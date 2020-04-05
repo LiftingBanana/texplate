@@ -1,0 +1,32 @@
+\chapter*[Setup]{Setup}
+\addcontentsline{toc}{chapter}{Setup}
+For help in setting up, consider:
+\begin{itemize}
+	\item Install Python, version $\geq 3.3$. Install the python requirements from $requirements.txt$ 
+	\item Install a Latex distribution, preferably 
+	\href{https://miktex.org/howto/install-miktex-unx}{MikTex}. If you use 
+	a different Latex distribution, don't blame me for installations being 
+	a pain in the ass. 
+	\item Set MikTex to installing packages on the fly.
+	\item In the MikTex console, install latexmk. You might also need perl for
+	\href{http://strawberryperl.com/}{Windows} or  
+	\href{https://www.perl.org/get.html}{Linux}.
+	\item Use \href{https://code.visualstudio.com/}{Visual Studio Code}. 
+	That will make it easier for both of us, because you can use the build 
+	settings I took the time to figure out. This template has an unusual 
+	build structure and at least one peculiar package. Its got a lot of cool stuff, 
+	like automatic compilation, formula preview, build recipes and stuff for other 
+	languages to offer.
+	\item So, in VS Code, download 
+	\href{https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop}
+	{\LaTeX workshop} extension. Then integrate the content of $buildrecipe\_settings.json$ 
+	into VSCode's $settings.json$. 
+	This file contains a compile procedure with all necessary flags and build structure.
+	\item \href{
+		https://superuser.com/questions/816340/minted-cannot-find-pygmentize-in-texstudio-on-windows-7/1382840
+		}{Make minted work}.
+	Using a separate python package to do linting and stuff is awkward. 
+	Make sure the python package pygments and its subscript pygmentize 
+	are properly installed and found in the path before any Latex stuff. 
+\end{itemize}
+

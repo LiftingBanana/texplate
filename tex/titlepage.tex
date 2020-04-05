@@ -1,0 +1,38 @@
+% Avoid blank page after title page..
+\AtBeginShipoutNext{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+\begin{titlingpage}
+	\begin{center}
+		\begin{figure}[h] % a title logo!
+			\centering
+			\includegraphics[width=0.7\textwidth]{images/logo.png}
+		\end{figure}
+		
+		\textsc{\LARGE \docOrganization}\\[0.5cm]
+		\textsc{\Large \docDepartment}\\[0.5cm]
+		
+		\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % define a THICC line
+		\HRule \\[0.7cm]
+		{\huge \bfseries \docTitle }\\[0.4cm]	
+		\HRule \\[1cm]
+	\end{center}
+
+	\begin{minipage}[t]{0.5\textwidth}
+		\begin{flushleft} \large
+			\emph{author:}\\
+			\docAuthor
+		\end{flushleft}
+	\end{minipage}
+
+% If this is a thesis, uncomment:
+%	\begin{minipage}[t]{0.5\textwidth}	
+%		\begin{flushright} \large
+%			\emph{supervisor:} \\			
+%			Supervisor	
+%		\end{flushright}
+%	\end{minipage}
+	
+	\begin{center}
+		\vfill
+		{\large \docDate}			
+	\end{center}
+\end{titlingpage}
